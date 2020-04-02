@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import Navitem from './Navitem';
 
 class Navbar extends Component {
-    constructor(props){
-        super(props);this.state={
+    constructor(props)
+    {
+        super(props);
+        this.state={
             'NavItemActive':''
         }
     }
-    activeitem=(x)=>{
+    activeitem=(x)=>
+    {
         if(this.state.NavItemActive.length>0){
-            document.getElementById(this.state.NavItemActive).classList.remove
-            ('active');
+            document.getElementById(this.state.NavItemActive).classList.remove('active');
         }
-        this.setState({'NavItemId':x},()=>{
-            document.getElementById(this.state.NavItemActive).classList.add
-            ('active');
-        }
-        );
+        this.setState({'NavItemActive':x},()=>{
+            document.getElementById(this.state.NavItemActive).classList.add('active');
+        });
     };
     render() {
         return (
-        <nav>
+            <nav>
             <ul>
-                <Navitem item="Home" tolink="/"  activec={this.activeitem}></Navitem>
-                <Navitem item="About" tolink="/about"  activec={this.activeitem}></Navitem>
-                <Navitem item="Education" tolink="/education"  activec={this.activeitem}></Navitem>
-                <Navitem item="Skills" tolink="/skills"  activec={this.activeitem}></Navitem>
-                <Navitem item="Contact" tolink="/contact"  activec={this.activeitem}></Navitem>
+            <Navitem item="Home" tolink="/"  activec={this.activeitem}></Navitem>
+            <Navitem item="About" tolink="/about"  activec={this.activeitem}></Navitem>
+            <Navitem item="Education" tolink="/education"  activec={this.activeitem}></Navitem>
+            <Navitem item="Skills" tolink="/skills"  activec={this.activeitem}></Navitem>
+            <Navitem item="Contact" tolink="/contact"  activec={this.activeitem}></Navitem>
             </ul>
-        </nav>
-        )
+            </nav>
+            )
+        }
     }
-}
-
-export default Navbar
+    
+    export default Navbar
